@@ -2,9 +2,8 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const url = 'https://www.property24.co.ke/property-for-sale-in-nairobi-p95';
 const { det, opts, version, Opts, Res } = require("detergent");
-// sc_panel js_listingTile sc_listingTile 
 
-async function getInfo(){
+function getInfo(){
   let info = []; 
   
   let returny = await axios.get(url)  
@@ -24,6 +23,7 @@ async function getInfo(){
 
 
      info.push({'title': det(title).res, 'price': det(priceGetter.text()).res, 'location': det(locationGettere.text()).res, 'description': det(description.text()).res});
+     console.log(info);
    });
   
      return info;
