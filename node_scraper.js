@@ -31,6 +31,4 @@ function getInfo(){
   
 }
 
-console.log(getInfo());
-
-getInfo('nairobi-west')
+getInfo();
