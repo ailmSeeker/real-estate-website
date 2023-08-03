@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import './index.css';
 
 import App from './contact';
 
-import App from './App';
 import LoginSection from './Components/LoginSection';
 import reportWebVitals from './reportWebVitals';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
