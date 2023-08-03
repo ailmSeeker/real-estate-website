@@ -1,10 +1,11 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { det } = require("detergent");
-
 const url = 'https://www.property24.co.ke/property-for-sale-in-nairobi-p95';
 
 async function getInfo() {
+  // Dynamically import the detergent library
+  const { det } = await import('detergent');
+
   let info = [];
 
   try {
@@ -29,7 +30,7 @@ async function getInfo() {
         'description': det(description.text()).res
       });
     });
-    console.log(info);
+
     return info;
   } catch (error) {
     console.error('Error fetching data:', error.message);

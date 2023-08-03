@@ -1,9 +1,10 @@
 const express = require('express');
-const cors = require('cors'); // Add this if needed to enable CORS
+const cors = require('cors');
+ // Add this if needed to enable CORS
 const getInfo = require('./node_scraper'); // Adjust the path accordingly
 
 const app = express();
-const port = 5000; // You can change this to any available port number you prefer
+const port = 9000; // You can change this to any available port number you prefer
 
 app.use(cors()); // Add this if you're running your React app on a different domain
 
