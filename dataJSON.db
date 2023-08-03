@@ -1,0 +1,84 @@
+{
+    "Data": {
+      "nairobi": [
+        {
+          "price": "KSh 6 500 000",
+          "image": "https://images.prop24.com/lbmh7y6gp4jd2g7p5tqgg4wub4/Crop237x198",
+          "type": "1 Bedroom Apartment / Flat for Sale in Kilimani",
+          "location": "Riara Rd, Kilimani, Nairobi",
+          "desc": "Lovely #one #Bedroom for #sale in #Kilimani Riara Road Amenities Heated Swimming Pool Fully Equipped Gym Open... "
+        },
+        {
+          "price": "KSh 7 500 000",
+          "image": "https://images.prop24.com/lbmh7y6gp4jd2g7p5tqgg4wub4/Crop237x198",
+          "type": "3 Bedroom House for Sale in Ongata Rongai",
+          "location": "Ongata Rongai Nairobi County, Ongata Rongai, Nairobi",
+          "desc": "A very spacious 3 bedroom master ensuite bungalow in Ongata Rongai Mericho rd. It is in a serene and secure gated community . On sale ksh 7.5"
+        },
+        {
+          "price": "KSh 28 000 000",
+          "image": "https://images.prop24.com/uslwgv3czl7sph4awwxgfy2fni/Crop237x198",
+          "type": "4 Bedroom Townhouse for Sale in Kiambu Roa",
+          "location": "Njathaini Rd Kiambu County, Kiambu Road, Nairobi",
+          "desc": "A very spacious 3 bedroom master ensuite bungalow in Ongata Rongai Mericho rd. It is in a serene and secure gated community . On sale ksh 7.5"
+        },
+  
+        {
+          "price": "KSh 7 000 000",
+          "image": "https://images.prop24.com/yp6i4z67oxndiqwl3ilgqzzdnm/Crop237x198",
+          "type": "2 Bedroom Apartment / Flat for Sale in Lavington",
+          "location": "Nairobi, Lavington",
+          "desc": "THis residential development offers substantial capital appreciation and good rental returns; 1, 2 and 3 bedroom apartments."
+        },
+  
+        {
+          "price": "KSh 14 000 000",
+          "image": "https://images.prop24.com/4ezeib2svtq6bzdue75xd2i7mi/Crop237x198",
+          "type": "3 bedroom",
+          "location": "Urban Oasis in Lavington",
+          "desc": "urban oasis is a project which covers 1.075 acres and construction area of 27670 sqm, comprises 12 floors building "
+        },
+  
+        {
+          "price": "ksh 7 500 000 ",
+          "image": "https://images.prop24.com/ztmdzic6ma6r6bxxl6gzzwdqcm/crop237x198",
+          "type": "2 bedroom apartment for sale",
+          "location": "nairobi, lavington",
+          "desc": "this signature residence present both residents and investors with great return."
+        },
+  
+        {
+          "price": "KSh 22 950 000 ",
+          "image": "https://images.prop24.com/6annni4fld5ablbniaqdlxac3m/Crop237x198",
+          "type": "Modern 4 bedroom townhouse in South C",
+          "location": "South C Nairobi West, South C, Nairobi",
+          "desc": "A brand new construction: A beautifully designed 4 bedrooms master ensuite townhouse plus DSQ in South C."
+        },
+  
+        {
+          "price": "https://images.prop24.com/b32vofcdd5uyjlm7z236ikdbdm/Crop237x198",
+          "image": "KSh 40 000 000 ",
+          "type": "4 Bedroom House for Sale in Riverside",
+          "location": "Nairobi, Riverside",
+          "desc": "Looking for an astounding place to call home? search no more as this house will perfectly make a heart warming residence for you."
+        },
+  
+        {
+          "price": " KSh 140 000 000",
+          "image": "https://images.prop24.com/6bn6rgrp5zqygvnje35tbfwdfi/Crop237x198",
+          "type": "Vacant Land / Plot for Sale in Lavington",
+          "location": "Nairobi, Lavington",
+          "desc": "Vacant land for sale in lavington in a gated community ideal for development of Townhouses or individual residency."
+        },
+  
+        {
+          "price": "KSh 55 000 000",
+          "image": "https://images.prop24.com/yuomhfqzz72pfdziykyk77ho24/Crop237x198",
+          "type": "Lavington Nairobi, Lavington, Nairobi",
+          "location": "5 bedroom townhouse for sale in Lavington ",
+          "desc": "These beautiful town-houses straddle three levels of unique modern architecture, designed to seamlessly bring convenience to daily life."
+        }
+      ]
+    }
+  }
+  
