@@ -17,3 +17,37 @@
     "name": "typicode"
   }
 }
+    'data': [
+    {
+        'id': 1,
+        'price':' Ksh 18,000,000',
+        'title': '4 Bedroom Apartment / Flat for Sale in Lavington',
+        'description': 'The Apartments boast of high-class finishing, 13 floors, 70 units on 0. 5 of an acre. Amenities: ?Fully equipped...',
+    },
+    {
+        'id': 2,
+        'price':' Ksh 19,000,000',
+        'title': '4 Bedroom Apartment / Flat for Sale in Lavington',
+        'description': 'Composed of three blocks of 12 floors with 3 basement layers for parking. It has wide open glass windows, thoughtful architecture... ',
+    },{
+        'id': 3,
+        'price': 'Ksh 17 125 500',
+        'title': null,
+        'description': 'The promoters of Hayer One group are responsible for the development of more than 1. 5 million sq. Ft. Of prime real estate in Nairobi, and have become... ',
+    },{
+         'id': 4,
+        'price': 'Ksh 5 500 000',
+        'title': '1 Bedroom Apartment / Flat for Sale in Kilimani',
+        'description': 'This project is located in Kilimani. Invest in this modern project comprising of Studios, 1 and 2 bedrooms master en-suite. Has 1...',
+    },{
+         'id': 4,
+         'price': ' KSh 6 200 000',
+         'title': '1 Bedroom Apartment / Flat for Sale in Kilimani'
+         'description': ' This project is located in Kilimani. Invest in this modern project comprising of Studios, 1 and 2 bedrooms master en-suite. Has 1... ',
+    },{
+        'id': 5,
+        'price': ' KSh 6 200 000',
+        'title': '1 Bedroom Apartment / Flat for Sale in Westlands'
+        'description': 'Modern Spacious 1/2/3 Bedroom apartments available for Sale in Westlands Very Prime 1/2 Bedroom Apartments available for Sale ... '
+    },
+    ]}
