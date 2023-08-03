@@ -1,7 +1,7 @@
 // App.js
 import React, { useState } from 'react';
+import Flashcard from './Flashcard';
 import axios from 'axios';
-import FlashCard from './FlashCard';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +29,7 @@ const App = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button onClick={handleSearch}>Search</button>
-      {flashcardData && <FlashCard data={flashcardData} />}
+      {flashcardData && <Flashcard data={flashcardData} />}
     </div>
   );
 };
