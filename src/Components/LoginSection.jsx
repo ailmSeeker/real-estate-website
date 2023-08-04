@@ -32,4 +32,4 @@ const LoginSection = () => {
 }
 
 export default LoginSection
-         {/* <button className="p-3 bg-white border rounded-full w-full font-semibold">Skip for now</button> */}
+        //  {/* <button className="p-3 bg-white border rounded-full w-full font-semibold">Skip for now</button> */}

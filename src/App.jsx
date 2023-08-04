@@ -1,23 +1,9 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import GetInfo from './getInfo.js'
-// import Login from './GetLogin.js'
-
-// import { ChakraProvider } from '@chakra-ui/react'
-
-// function App() {
-//   return (
-//     <>
-//     <h1>hello</h1>
-//     <ChakraProvider>
-//         <Login />
-//     </ChakraProvider>
-//     </>
-//   );
-// }
- import React, { useState } from 'react';
- import './index.css';
-
+// App.js
+import React, { useState, useEffect } from 'react';
+import './index.css';
+import CardSection from './Components/CardSection';
+import FooterSection from './Components/FooterSection';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,13 +12,42 @@ const App = () => {
   const [propertyType, setPropertyType] = useState('');
   const [location, setLocation] = useState('');
 
+  const [property, setProperty] = useState([]);
+  const [originalProperty, setOriginalProperty] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data')
+      .then((response) => response.json())
+      .then((data) => {
+        setProperty(data);
+        setOriginalProperty(data);
+      });
+  }, []);
+
   const handleSearch = () => {
-    // Add your search functionality here
-    console.log('Property type:', propertyType);
-    console.log('Location:', location);
-    console.log('Min price:', minPrice);
-    console.log('Max price:', maxPrice);
-    console.log('Search term:', searchTerm);
+    // Filter properties based on search criteria
+    const filteredProperty = originalProperty.filter((item) => {
+      const typeMatch = !propertyType || item.propertyType === propertyType;
+      const locationMatch = !location || (item.location && item.location.includes(location));
+      const minPriceValue = parseInt(minPrice.replace(/[^0-9]/g, '')); // Convert "Ksh 19,000,000" to 19000000
+      const maxPriceValue = parseInt(maxPrice.replace(/[^0-9]/g, '')); // Convert "Ksh 19,000,000" to 19000000
+      const priceValue = parseInt(item.price.replace(/[^0-9]/g, '')); // Convert "Ksh 19,000,000" to 19000000
+      const priceMatch = (!minPriceValue || priceValue >= minPriceValue) && (!maxPriceValue || priceValue <= maxPriceValue);
+      const searchTermMatch =
+        !searchTerm ||
+        (item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()));
+
+      return typeMatch && locationMatch && priceMatch && searchTermMatch;
+   
+    });
+
+    // if user doesn't have any search item
+    if (searchTerm === "") {
+      setProperty(originalProperty); // Reset the property list to the original list
+    } else {
+      setProperty(filteredProperty);
+    }
   };
 
   const generatePriceOptions = () => {
@@ -50,8 +65,14 @@ const App = () => {
     return options;
   };
 
+  const navigate = useNavigate();
+  const handleClick = (property_id) => {
+    // console.log(property_id)
+    navigate(`/buyProperty/${property_id}`);
+  };
+
   return (
-    <div className="flex justify-between items-center bg-[#2f4f4f] h-screen  flex-col">
+    <div className="flex justify-between items-left bg-[#2f4f4f] h-fit  flex-col">
       <header className="App-header width-full bg-[#eff0f1] p-10 rounded mb-5 baseline flex-wrap items-baseline justify-baseline">
         <div className="flex items-center mb-4">
           <svg
@@ -68,6 +89,7 @@ const App = () => {
             />
           </svg>
           <h1 className="text-3xl font-bold text-[#1a3d86]">Homes 254</h1>
+
         </div>
         <div className="search-bar baseline justify-baseline items-baseline bg-[#e3eeee] p-4 rounded-md">
           <select
@@ -81,8 +103,8 @@ const App = () => {
             <option value="condo">Condo</option>
           </select>
 
-         
-           <select
+
+          <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-700"
@@ -121,32 +143,31 @@ const App = () => {
 
 
           <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" onClick={handleSearch}>Search</button>
+
         </div>
       </header>
 
-     
       <section className="bg-homepage-color p-4">
-      <h2 className="text-2xl font-bold text-center mb-4">Section 1</h2>
-
-
-
-
-
-
-
+        <h2 className="text-2xl font-bold text-left mb-4 text-white">Properties</h2>
+        <div className="flex gap-4 flex-wrap">
+          {property.map((item) => (
+            <CardSection
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              image={item.image}
+              description={item.description}
+              handleClick={() => handleClick(item.id)} // Pass the handleClick function as a prop
+            />
+          ))}
+        </div>
       </section>
 
-      
-      <section className="bg-section2-color p-4">
-        <h2 className="text-2xl font-bold text-center mb-4">Section 2</h2>
+      {/* Use the Outlet to render nested routes */}
+      <Outlet />
 
-
-
-
-
-        
-
-      </section>
+      {/* ... Your other sections ... */}
+      <FooterSection />
     </div>
   );
 };
