@@ -1,37 +1,33 @@
-// App.js
+// src/App.js
+
 import React, { useState } from 'react';
+import PrimarySearchAppBar from './SearchBar'; // Correct import for SearchBar
+import data from './db.json';
 import Flashcard from './Flashcard';
-import axios from 'axios';
 
-const App = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [flashcardData, setFlashcardData] = useState(null);
+function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get(`/search?term=${searchTerm}`);
-      const data = response.data;
-      if (data.length > 0) {
-        setFlashcardData(data[0]); // Assuming the server returns an array of data and we're using only the first item as the flashcard data.
-      } else {
-        setFlashcardData(null);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error.message);
-    }
+  const handleSearch = () => {
+    const results = data.Data.nairobi.filter((item) =>
+      item.desc.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(results);
   };
 
   return (
-    <div className="App">
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+    <div>
+      {/* Render the SearchBar component with necessary props */}
+      <PrimarySearchAppBar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        handleSearch={handleSearch}
       />
-      <button onClick={handleSearch}>Search</button>
-      {flashcardData && <Flashcard data={flashcardData} />}
+      {/* Render the Flashcard component with searchResults data */}
+      <Flashcard data={searchResults} />
     </div>
   );
-};
+}
 
 export default App;
